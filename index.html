@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login page</title>
+    <link rel="icon" href="tv.ico">
+</head>
+<style>
+   
+    div{
+        width:100%;
+        height:60px;
+        background-color:rgba(167, 244, 116, 0.5)
+    }
+    .text{
+        color: rgb(1, 12, 12);
+        font-size: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+</style>
+<body>
+    <div>
+        <form>
+            <label for="email"><p class="text">Enter your email:</p></label>
+            <input type="email" id="email">
+            <input type="button" value="Submit" onclick="checkEmail();" />
+        </form>
+    </div>
+    <!--Function to check email format, accepts emails of format *@student.nitandhra.ac.in-->
+    <script type="text/javascript">
+        function checkEmail() {
+            var emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var email = document.getElementById("email").value;
+            if (email.match(emailFormat) && email.endsWith('@student.nitandhra.ac.in')) {
+                window.location="main.html";
+            }
+            else{
+                alert("Invalid email format or domain. Please enter a valid *@student.nitandhra.ac.in email.");
+            }
+        }
+    </script>
+</body>
+</html>
